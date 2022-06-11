@@ -1,0 +1,35 @@
+.top{
+    padding: 20px;
+    margin-top: 20px;
+}
+body{
+color:rgb(47, 126, 126);
+}
+h1{
+    text-align: center;
+}
+h2{
+    text-align: center;
+}
+.cent_em{
+    font-size: 40px;
+    text-align: center;
+}
+.cards{
+display: block;
+}
+.card-text{
+    text-align: center;
+}
+  .show {
+        visability: true;
+    }
+    .hide {
+        display: none;
+    }
+    #nowDay{
+       text-align: center; 
+    }
+    li{
+        list-style: none;
+    }
