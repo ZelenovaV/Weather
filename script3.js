@@ -24,26 +24,25 @@ function formatDate() {
 let nDay = document.querySelector("#nowDay");
 nDay.innerHTML = formatDate();
 
-function displayWeathercondition(response){
+function displayWeathercondition(response) {
   console.log(response);
-     let newTemp = Math.round(response.data.main.temp);
-   document.querySelector("#valueC").innerHTML = newTemp;
-   document.querySelector("h1").innerHTML= response.data.name;
-   document.querySelector("#humidity").innerHTML= response.data.main.humidity;
-   document.querySelector("#wind").innerHTML= response.data.wind.speed;
-   calcFarenheit();
-
+  let newTemp = Math.round(response.data.main.temp);
+  document.querySelector("#valueC").innerHTML = newTemp;
+  document.querySelector("h1").innerHTML = response.data.name;
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#wind").innerHTML = response.data.wind.speed;
+  calcFarenheit();
 }
 
 function change(event) {
-event.preventDefault();
-let city = document.querySelector(".form-control").value;
-let apiKey = "840cae4b192e01b195c079d7573fc04f";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&&units=metric`;
-axios.get(apiUrl).then(displayWeathercondition)
+  event.preventDefault();
+  let city = document.querySelector(".form-control").value;
+  let apiKey = "840cae4b192e01b195c079d7573fc04f";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&&units=metric`;
+  axios.get(apiUrl).then(displayWeathercondition);
 }
-let input = document.querySelector("#button-addon2");
-input.addEventListener("click", change);
+let form = document.querySelector("form");
+form.addEventListener("submit", change);
 
 function showFarenheit(event) {
   event.preventDefault();
@@ -67,7 +66,7 @@ ch2Celcius.addEventListener("click", showCelcius);
 
 function calcFarenheit() {
   let degry = document.querySelector("#valueC");
-  celcius = parseFloat(degry.textContent);
+  let celcius = parseFloat(degry.textContent);
   let faren = Math.round(celcius * 1.8 + 32);
   let farenheit = document.querySelector("#valueF");
   farenheit.innerHTML = faren;
@@ -79,11 +78,9 @@ function showPosition(position) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&limit=5&appid=840cae4b192e01b195c079d7573fc04f&units=metric`;
   axios.get(apiUrl).then(displayWeathercondition);
 }
-function geo(event){
+function geo(event) {
   event.preventDefault();
-navigator.geolocation.getCurrentPosition(showPosition);
+  navigator.geolocation.getCurrentPosition(showPosition);
 }
 let yorPos = document.querySelector("#button-addon3");
 yorPos.addEventListener("click", geo);
-
-
