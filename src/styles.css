@@ -5,6 +5,14 @@
 body{
 color:rgb(47, 126, 126);
 }
+.container_maim{
+     max-width: 600px;
+    margin: 40px auto;
+    border-radius: 20px;
+    padding: 20px;
+    border: 1px solid #4da1f7;
+
+}
 h1{
     text-align: center;
 }
