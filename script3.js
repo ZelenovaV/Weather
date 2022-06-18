@@ -90,3 +90,7 @@ function geo(event) {
 }
 let yorPos = document.querySelector("#button-addon3");
 yorPos.addEventListener("click", geo);
+
+function displayForecast(){
+ler forecastelement= document.querySelector
+}
