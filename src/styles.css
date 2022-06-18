@@ -10,11 +10,16 @@ color:rgb(47, 126, 126);
     margin: 40px auto;
     border-radius: 20px;
     padding: 20px;
-    border: 1px solid #4da1f7;
+    border: 1px solid #48484A;
 
 }
+#icon{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 h1{
-    text-align: center;
+    padding-left: 32px;
 }
 h2{
     text-align: center;
@@ -40,4 +45,24 @@ display: block;
     }
     li{
         list-style: none;
+    }
+    #button-addon3{
+    color: #6c757d;
+    float:right;
+    display:block;
+    margin-right:0px;
+    clear:left;
+    border: 1px solid #6c757d;
+    border-radius: 5px;
+    background-color: #fff;
+    }
+    #button-addon3:hover{
+color: #fff;
+background-color: #6c757d;
+ transition: all 0.5s;
+ box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+ cursor: pointer;
+    }
+    .card-body{
+        height: 160px;
     }
