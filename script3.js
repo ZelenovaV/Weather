@@ -38,6 +38,7 @@ function displayWeathercondition(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
   calcFarenheit();
+  
 }
 
 function change(event) {
@@ -92,5 +93,16 @@ let yorPos = document.querySelector("#button-addon3");
 yorPos.addEventListener("click", geo);
 
 function displayForecast(){
-ler forecastelement= document.querySelector
+let forecastElement= document.querySelector("#forecast");
+let forecastHTML= "";
+forecastElement.innerHTML = `  
+                <div class="row">
+                    <div class="col-2">
+                        <div class="weather-forecast-date">
+                        Son</div>
+                        <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="sun" width="46px"/>
+                        <div class="weather-forecast-temperature"><span class="weatgerMax">18 &#176</span> <span class="weatherMin">12 &#176</span> 
+                </div>
+            </div>`;
 }
+displayForecast();

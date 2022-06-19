@@ -66,3 +66,14 @@ background-color: #6c757d;
     .card-body{
         height: 160px;
     }
+    .weather-forecast{
+        text-align: center;
+        margin-top: 20px;
+         color: #000;
+    }
+    .weatherMin{
+        opacity: 0.5;
+    }
+    .weather-forecast-date{
+        text-align: center;
+    }
