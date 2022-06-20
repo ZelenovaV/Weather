@@ -94,15 +94,22 @@ yorPos.addEventListener("click", geo);
 
 function displayForecast(){
 let forecastElement= document.querySelector("#forecast");
-let forecastHTML= "";
-forecastElement.innerHTML = `  
-                <div class="row">
+let forecastHTML= `<div class="row">`;
+let days= ["Thu", "Fri", "Sat","Sun"];
+days.forEach(function(day){
+forecastHTML =
+  forecastHTML +
+  `  
                     <div class="col-2">
-                        <div class="weather-forecast-date">
-                        Son</div>
+                        <div class="weather-forecast-date">${day}</div>
                         <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="sun" width="46px"/>
                         <div class="weather-forecast-temperature"><span class="weatgerMax">18 &#176</span> <span class="weatherMin">12 &#176</span> 
-                </div>
-            </div>`;
-}
+               </div>
+               </div> `;
+})
+
+            forecastHTML=forecastHTML+`</div>`;
+            
+forecastElement.innerHTML=forecastHTML;
+          }
 displayForecast();
