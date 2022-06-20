@@ -24,6 +24,14 @@ function formatDate() {
 let nDay = document.querySelector("#nowDay");
 nDay.innerHTML = formatDate();
 
+function getForecast(coordinates){
+  console.log(coordinates);
+let apiKey= "840cae4b192e01b195c079d7573fc04f";
+let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+console.log(apiUrl);
+axios.get(apiUrl).then(displayForecast);
+}
+
 function displayWeathercondition(response) {
   console.log(response);
   let newTemp = Math.round(response.data.main.temp);
@@ -38,6 +46,7 @@ function displayWeathercondition(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
   calcFarenheit();
+  getForecast(response.data.coord);
   
 }
 
@@ -47,6 +56,7 @@ function change(event) {
   let apiKey = "840cae4b192e01b195c079d7573fc04f";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&&units=metric`;
   axios.get(apiUrl).then(displayWeathercondition);
+  
 }
 let form = document.querySelector("form");
 form.addEventListener("submit", change);
