@@ -103,17 +103,18 @@ let yorPos = document.querySelector("#button-addon3");
 yorPos.addEventListener("click", geo);
 
 function displayForecast(){
+  let forecast= response.data.dayly;
 let forecastElement= document.querySelector("#forecast");
 let forecastHTML= `<div class="row">`;
 let days= ["Thu", "Fri", "Sat","Sun"];
-days.forEach(function(day){
+forecast.forEach(function(forecastDay){
 forecastHTML =
   forecastHTML +
   `  
                     <div class="col-2">
-                        <div class="weather-forecast-date">${day}</div>
-                        <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="sun" width="46px"/>
-                        <div class="weather-forecast-temperature"><span class="weatgerMax">18 &#176</span> <span class="weatherMin">12 &#176</span> 
+                        <div class="weather-forecast-date">${forecastDay.dt}</div>
+                        <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" alt="sun" width="46px"/>
+                        <div class="weather-forecast-temperature"><span class="weatgerMax"> ${forecastDay.dt.max} &#176</span> <span class="weatherMin"> ${forecastDay.dt.min} &#176</span> 
                </div>
                </div> `;
 })
