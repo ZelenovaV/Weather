@@ -10,8 +10,8 @@ color:rgb(47, 126, 126);
     margin: 40px auto;
     border-radius: 20px;
     padding: 20px;
-    border: 1px solid #48484A;
-
+    border: 1px solid #b3b3b9;
+    box-shadow: 2px 2px 2px rgb(204, 203, 203);
 }
 #icon{
     display: block;
