@@ -32,6 +32,7 @@ function getForecast(coordinates) {
   axios.get(apiUrl).then(displayForecast);
 }
 
+
 function displayWeathercondition(response) {
   console.log(response);
   let newTemp = Math.round(response.data.main.temp);
