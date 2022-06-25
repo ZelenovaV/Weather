@@ -50,12 +50,16 @@ function displayWeathercondition(response) {
   getForecast(response.data.coord);
 }
 
-function change(event) {
-  event.preventDefault();
-  let city = document.querySelector(".form-control").value;
+function main(city) {
   let apiKey = "840cae4b192e01b195c079d7573fc04f";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&&units=metric`;
   axios.get(apiUrl).then(displayWeathercondition);
+}
+
+function change(event) {
+  event.preventDefault();
+  let city = document.querySelector(".form-control").value;
+  main(city);
 }
 let form = document.querySelector("form");
 form.addEventListener("submit", change);
@@ -137,4 +141,4 @@ if (index < 6){
 
   forecastElement.innerHTML = forecastHTML;
 }
-displayForecast();
+main("Bonn");

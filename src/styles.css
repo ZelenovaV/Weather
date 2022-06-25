@@ -77,3 +77,6 @@ background-color: #6c757d;
     .weather-forecast-date{
         text-align: center;
     }
+    .source{
+        font-size: 13px;
+    }
